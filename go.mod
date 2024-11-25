@@ -1,4 +1,4 @@
-module hxgo-skeleton
+module github.com/bascott5/hxgo-skeleton
 
 go 1.23.3
 

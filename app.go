@@ -5,16 +5,10 @@ import (
 	"net/http"
 	"os"
 
+	middleware "hxgo-skeleton/internals/middleware"
+
 	"github.com/joho/godotenv"
 )
-
-func logger(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-
-		next.ServeHTTP(w, r)
-		fmt.Printf("%s %q\n", r.Method, r.Pattern)
-	})
-}
 
 func main() {
 	godotenv.Load()
@@ -29,6 +23,6 @@ func main() {
 	router.Handle("/web/", http.StripPrefix("/web/", fs))
 
 	fmt.Printf("Listening on: http://localhost:%s\n", port)
-	configuredRouter := logger(router)
+	configuredRouter := middleware.Logger(router)
 	http.ListenAndServe(fmt.Sprintf(":%s", port), configuredRouter)
 }

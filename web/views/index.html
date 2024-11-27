@@ -8,6 +8,12 @@
     <title>Home</title>
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <h1>Counter</h1>
+    <button hx-post="/increment" hx-target="#wrapper" hx-include="#counterInput">+</button>
+    <div id="wrapper">
+        <input type="hidden" id="counterInput" name="counter" value="0">
+        <p id="counter">0</p>
+    </div>
+    <button hx-post="/decrement" hx-target="#wrapper" hx-include="#counterInput">-</button>
 </body>
 </html>

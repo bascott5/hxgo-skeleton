@@ -18,5 +18,5 @@ func Routes() http.Handler {
 	// templates
 	mux.HandleFunc("/add", handlers.AddHandler())
 
-	return middleware.LoggerMiddleware(mux)
+	return middleware.LoggingMiddleware(mux)
 }

@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func LoggerMiddleware(next http.Handler) http.Handler {
+func LoggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		t := time.Now()
 
@@ -14,7 +14,7 @@ func LoggerMiddleware(next http.Handler) http.Handler {
 
 		duration := time.Since(t)
 		fmt.Printf(
-			"%d-%d-%d %d:%d:%d "+`"%s %s"`+" ................................. %s\n",
+			"%d-%d-%d %d:%d:%d "+`"%s %s"`+" in %s\n",
 			t.Year(),
 			t.Month(),
 			t.Day(),

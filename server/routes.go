@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	handlers "hxgo-skeleton/server/handlers"
 	middleware "hxgo-skeleton/server/middleware"
 	"net/http"
@@ -14,6 +15,9 @@ func Routes() http.Handler {
 
 	// pages
 	mux.HandleFunc("/", handlers.IndexHandler())
+	mux.HandleFunc("/robots.txt", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "User-agent: *\nAllow: /")
+	}))
 
 	// templates
 	mux.HandleFunc("/add", handlers.AddHandler())

@@ -1,3 +1,5 @@
-[] Model structure after ideas from "How I write Go HTTP services after seven years"
-[] Transform into a TODO app to showcase HTMX
-[] Use scss instead
+[] Implement .env read without having to use a third party library
+[] Create a custom error page
+[] Prevent logs from showing up in the terminal more than once
+[] Show the time it takes for a request to be sent in the terminal
+[] Make sure it can be made into a docker container

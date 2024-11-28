@@ -39,7 +39,8 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	if err := server.Shutdown(ctx); err != nil {
+	err := server.Shutdown(ctx)
+	if err != nil {
 		fmt.Printf("Server forced to shutdown: %v", err)
 	}
 

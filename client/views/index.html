@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles/global.css">
     <script defer type="text/javascript" src="static/scripts/htmx.min.js"></script>
-    <title>Home</title>
+    <title>TO DO</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>TO DO</h1>
+    <form hx-post="/add" hx-target="next" hx-swap="beforeend">
+        <input type="text" name="note">
+        <button type="submit">Submit</button>
+    </form>
+    <section class="item-container"></section>
 </body>
 </html>

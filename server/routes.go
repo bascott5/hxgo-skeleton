@@ -9,6 +9,9 @@ import (
 func Routes() http.Handler {
 	mux := http.NewServeMux()
 
+	fs := http.FileServer(http.Dir("client/static"))
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	mux.HandleFunc("/", handlers.IndexHandler())
 
 	return middleware.LoggerMiddleware(mux)

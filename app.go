@@ -43,5 +43,5 @@ func main() {
 		fmt.Printf("Server forced to shutdown: %v", err)
 	}
 
-	fmt.Println("\nServer gracefully shutdown")
+	fmt.Println("\nServer shutdown gracefully")
 }

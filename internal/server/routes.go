@@ -9,8 +9,8 @@ import (
 func Routes() http.Handler {
 	mux := http.NewServeMux()
 
-	fs := http.FileServer(http.Dir("client/static"))
-	mux.Handle("/static/", http.StripPrefix("/static/", fs))
+	fs := http.FileServer(http.Dir("cmd/web"))
+	mux.Handle("/web/", http.StripPrefix("/web/", fs))
 
 	// pages
 	mux.HandleFunc("/", handlers.IndexHandler())

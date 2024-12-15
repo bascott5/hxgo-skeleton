@@ -15,7 +15,7 @@ func AddHandler() http.HandlerFunc {
 
 		note := r.FormValue("note")
 
-		tmpl, err := template.New("item.tmpl").ParseFiles("web/views/hx-templates/item.tmpl")
+		tmpl, err := template.New("item.tmpl").ParseFiles("cmd/web/views/hx-templates/item.tmpl")
 		if err != nil {
 			log.Fatalln(err)
 		}

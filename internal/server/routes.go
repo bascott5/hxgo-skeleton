@@ -1,6 +1,7 @@
 package server
 
 import (
+	web "hxgo-skeleton/cmd/web"
 	handlers "hxgo-skeleton/internal/server/handlers"
 	middleware "hxgo-skeleton/internal/server/middleware"
 	"net/http"
@@ -9,8 +10,7 @@ import (
 func Routes() http.Handler {
 	mux := http.NewServeMux()
 
-	fs := http.FileServer(http.Dir("cmd/web"))
-	mux.Handle("/web/", http.StripPrefix("/web/", fs))
+	mux.Handle("/web/", http.StripPrefix("/web/", http.FileServerFS(web.EmbeddedFS)))
 
 	// pages
 	mux.HandleFunc("/", handlers.IndexHandler())

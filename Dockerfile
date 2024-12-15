@@ -1,7 +1,7 @@
 # Build
 FROM golang:1.23.3-alpine AS build-env
 ENV APP_NAME=hxgo-skeleton
-ENV CMD_PATH=app.go
+ENV CMD_PATH=cmd/api/main.go
 COPY . $GOPATH/src/$APP_NAME
 COPY .env $GOPATH/src/$APP_NAME
 WORKDIR $GOPATH/src/$APP_NAME

@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	server "hxgo-skeleton/server"
+	server "hxgo-skeleton/internal/server"
 
 	"github.com/joho/godotenv"
 )

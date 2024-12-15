@@ -1,8 +1,8 @@
 package server
 
 import (
-	handlers "hxgo-skeleton/server/handlers"
-	middleware "hxgo-skeleton/server/middleware"
+	handlers "hxgo-skeleton/internal/server/handlers"
+	middleware "hxgo-skeleton/internal/server/middleware"
 	"net/http"
 )
 

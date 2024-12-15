@@ -4,6 +4,8 @@ import (
 	"log"
 	"net/http"
 	"text/template"
+
+	web "hxgo-skeleton/cmd/web"
 )
 
 func AddHandler() http.HandlerFunc {
@@ -15,7 +17,7 @@ func AddHandler() http.HandlerFunc {
 
 		note := r.FormValue("note")
 
-		tmpl, err := template.New("item.tmpl").ParseFiles("cmd/web/views/hx-templates/item.tmpl")
+		tmpl, err := template.New("item.tmpl").ParseFS(web.EmbeddedFS, "views/hx-templates/item.tmpl")
 		if err != nil {
 			log.Fatalln(err)
 		}
